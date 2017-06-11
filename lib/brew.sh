@@ -61,6 +61,8 @@ function install_brewpacks(){
 	array brewlist+ sshfs
 	#istat_menus
 	array casklist+ istat-menus
+	#ranger(file manager)
+	array brewlist+ ranger
 
 	#Install
 	brew update

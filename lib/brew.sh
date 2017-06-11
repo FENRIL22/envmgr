@@ -100,6 +100,7 @@ function install_pips(){
 function install_texlive(){
 	# Heavy Package
 	brew cask install mactex
+	brew install pandoc
 	# additional 
 	# https://snap.textfile.org/20151006085255/
 }

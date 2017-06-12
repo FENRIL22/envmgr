@@ -84,7 +84,7 @@ function install_maspacks(){
 function install_go(){
 	mkdir ~/go
 	brew install go
-	#echo "export GOPATH=~/go" >> ~/.bashrc
+	#echo "export GOPATH=~/env/go" >> ~/.bashrc
 	#echo "export PATH=$PATH:/$GOPATH/bin" >> ~/.bashrc
 }
 

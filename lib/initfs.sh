@@ -22,6 +22,7 @@ init_devfiles(){
 	cd ~/dev
 	git clone https://github.com/FENRIL22/lapatex.git
 	git clone https://github.com/FENRIL22/y-toolset.git
+	git clone https://FENRIL22@bitbucket.org/FENRIL22/chamber.git
 }
 
 init_docfiles(){

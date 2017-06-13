@@ -7,7 +7,8 @@ format_dics(){
 	mkdir ~/OneDrive
 	#mkdir env
 	mkdir -p ~/dev/chamber
-	mkdir docs
+	mkdir ~/docs
+	mkdir -p ~/fs/mnt
 }
 
 init_envfiles(){

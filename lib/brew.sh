@@ -4,8 +4,7 @@ define(){ eval ${1:?}=\"\${*\:2}\"; }
 array (){ eval ${1:?}=\(\"\${@\:2}\"\); }
 
 function init_brew(){
-	echo '
-	#################
+	echo ' #################
 	# brew install  #
 	#################
 	'
@@ -122,6 +121,7 @@ function do_yourself(){
 	Docker startup+Docker mem&cpu setting change
 	reboot for complete to aquqskk init
 	sudo tlmgr update --self --all
+	change setting : skim : autoreload(kannkou settei)
 	'
 }
 

@@ -20,7 +20,6 @@ init_envfiles(){
 
 init_devfiles(){
 	cd ~/dev
-	git clone https://FENRIL22@bitbucket.org/FENRIL22/secure_vars.git
 	git clone https://github.com/FENRIL22/lapatex.git
 	git clone https://github.com/FENRIL22/y-toolset.git
 }

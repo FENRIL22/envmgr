@@ -7,6 +7,7 @@ format_dics(){
 	mkdir ~/OneDrive
 	#mkdir env
 	mkdir -p ~/dev/chamber
+	mkdir docs
 }
 
 init_envfiles(){
@@ -14,13 +15,19 @@ init_envfiles(){
 	git clone https://github.com/FENRIL22/envmgr.git
 	git clone https://github.com/FENRIL22/dotfiles.git
 	(cd dotfiles; make init)
+	git clone https://FENRIL22@bitbucket.org/FENRIL22/secure_vars.git
 }
 
 init_devfiles(){
 	cd ~/dev
+	git clone https://FENRIL22@bitbucket.org/FENRIL22/secure_vars.git
 	git clone https://github.com/FENRIL22/lapatex.git
 	git clone https://github.com/FENRIL22/y-toolset.git
 }
+
+init_docfiles(){
+	git clone https://FENRIL22@bitbucket.org/FENRIL22/univ_m_2017.git
+	git clone https://FENRIL22@bitbucket.org/FENRIL22/univ_research.git
 
 
 #if [ "$1" = "init" ]

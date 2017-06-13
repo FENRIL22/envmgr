@@ -127,9 +127,9 @@ function do_yourself(){
 
 if [ "$1" = "init" ]
 then
-	#init_brew
-	#install_maspacks
-	#install_brewpacks
+	init_brew
+	install_maspacks
+	install_brewpacks
 
 	install_texlive
 	# !testing

@@ -27,6 +27,7 @@ init_devfiles(){
 }
 
 init_docfiles(){
+	cd ~/docs
 	git clone https://FENRIL22@bitbucket.org/FENRIL22/univ_m_2017.git
 	git clone https://FENRIL22@bitbucket.org/FENRIL22/univ_research.git
 }

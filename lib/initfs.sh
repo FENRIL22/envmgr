@@ -16,20 +16,20 @@ init_envfiles(){
 	git clone https://github.com/FENRIL22/envmgr.git || true
 	git clone https://github.com/FENRIL22/dotfiles.git
 	(cd dotfiles; make init)
-	git clone https://FENRIL22@bitbucket.org/FENRIL22/secure_vars.git
+	git clone git@bitbucket.org:FENRIL22/secure_vars.git
 }
 
 init_devfiles(){
 	cd ~/dev
 	git clone https://github.com/FENRIL22/lapatex.git
 	git clone https://github.com/FENRIL22/y-toolset.git
-	git clone https://FENRIL22@bitbucket.org/FENRIL22/chamber.git
+	git clone git@bitbucket.org:FENRIL22/chamber.git
 }
 
 init_docfiles(){
 	cd ~/docs
-	git clone https://FENRIL22@bitbucket.org/FENRIL22/univ_m_2017.git
-	git clone https://FENRIL22@bitbucket.org/FENRIL22/univ_research.git
+	git clone git@bitbucket.org:FENRIL22/univ_m_2017.git
+	git clone git@bitbucket.org:FENRIL22/univ_research.git
 }
 
 if [ "$1" = "format_dics" ]

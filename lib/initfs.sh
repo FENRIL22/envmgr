@@ -13,16 +13,16 @@ format_dics(){
 
 init_envfiles(){
 	cd ~/env
-	git clone https://github.com/FENRIL22/envmgr.git || true
-	git clone https://github.com/FENRIL22/dotfiles.git
+	git clone git@github.com:FENRIL22/envmgr.git
+	git clone git@github.com:FENRIL22/dotfiles.git
 	(cd dotfiles; make init)
 	git clone git@bitbucket.org:FENRIL22/secure_vars.git
 }
 
 init_devfiles(){
 	cd ~/dev
-	git clone https://github.com/FENRIL22/lapatex.git
-	git clone https://github.com/FENRIL22/y-toolset.git
+	git clone git@github.com:FENRIL22/lapatex.git
+	git clone git@github.com:FENRIL22/y-toolset.git
 	git clone git@bitbucket.org:FENRIL22/chamber.git
 }
 

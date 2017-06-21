@@ -14,7 +14,7 @@ init_ssh(){
 
 format_dics(){
 	mkdir ~/OneDrive || true
-	mkdir env
+	mkdir env || true
 	mkdir -p ~/dev/chamber || true
 	mkdir ~/docs || true
 	mkdir -p ~/fs/mnt || true

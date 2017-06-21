@@ -5,7 +5,7 @@ array (){ eval ${1:?}=\(\"\${@\:2}\"\); }
 
 format_dics(){
 	mkdir ~/OneDrive || true
-	#mkdir env
+	mkdir env
 	mkdir -p ~/dev/chamber || true
 	mkdir ~/docs || true
 	mkdir -p ~/fs/mnt || true
@@ -47,7 +47,7 @@ FDIC="format_dics"
 IDEV="init_devfiles"
 IENV="init_envfiles"
 IDOC="init_docfiles" 
-ALL="ALL"
+ALL="all"
 
 select ARG in ${FDIC} ${IDEV} ${IENV} ${IDOC} ${ALL}
 do
@@ -64,6 +64,7 @@ do
 		# dic Init OK  #
 		################
 		'
+		exit
 
 	elif [ ${ARG} = "init_devfiles" ]
 	then
@@ -74,6 +75,7 @@ do
 		# dev Init OK  #
 		################
 		'
+		exit
 
 	elif [ ${ARG} = "init_envfiles" ]
 	then
@@ -84,6 +86,7 @@ do
 		# ENV Init OK  #
 		################
 		'
+		exit
 
 	elif [ ${ARG} = "init_docfiles" ]
 	then
@@ -94,8 +97,9 @@ do
 		# Init OK      #
 		################
 		'
+		exit
 
-	elif [ ${ARG} = "ALL" ]
+	elif [ ${ARG} = "all" ]
 	then
 		echo '
 		################
@@ -111,6 +115,7 @@ do
 		# Init OK      #
 		################
 		'
+		exit
 
 	else
 		echo "unrecognize option"

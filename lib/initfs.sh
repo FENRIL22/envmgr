@@ -3,6 +3,15 @@ set -eu
 define(){ eval ${1:?}=\"\${*\:2}\"; }
 array (){ eval ${1:?}=\(\"\${@\:2}\"\); }
 
+init_ssh(){
+	mkdir ~/.ssh
+	cd ~/.ssh
+	ssh-keygen -t rsa
+	cat ~/.ssh/id_rsa.pub | pbcopy
+
+	echo "Generate Key copy to clipboard"
+}
+
 format_dics(){
 	mkdir ~/OneDrive || true
 	mkdir env
@@ -44,12 +53,13 @@ Do you want to do?
 '
 
 FDIC="format_dics"
+ISSH="init_ssh"
 IDEV="init_devfiles"
 IENV="init_envfiles"
 IDOC="init_docfiles" 
 ALL="all"
 
-select ARG in ${FDIC} ${IDEV} ${IENV} ${IDOC} ${ALL}
+select ARG in ${ISSH} ${FDIC} ${IDEV} ${IENV} ${IDOC} ${ALL}
 do
 	if [ -z "${ARG}" ]
 	then
@@ -88,13 +98,25 @@ do
 		'
 		exit
 
+	elif [ ${ARG} = "init_ssh" ]
+	then
+		echo "---init start ${ARG}...--------"
+		init_ssh
+		echo '
+		################
+		# SSH Init OK  #
+		################
+		'
+		exit
+
+
 	elif [ ${ARG} = "init_docfiles" ]
 	then
 		echo "---init start ${ARG}...--------"
 		init_docfiles
 		echo '
 		################
-		# Init OK      #
+		# DOC Init OK  #
 		################
 		'
 		exit

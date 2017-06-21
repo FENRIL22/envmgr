@@ -128,6 +128,10 @@ do
 		# Start Init   #
 		################
 		'
+		init_ssh
+		echo "please go to github and bitbucket,and paste key"
+		echo "after paste key, please push enter"
+		read
 		format_dics
 		init_devfiles
 		init_docfiles

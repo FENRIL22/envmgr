@@ -32,57 +32,91 @@ init_docfiles(){
 	git clone git@bitbucket.org:FENRIL22/univ_research.git
 }
 
-if [ "$1" = "format_dics" ]
-then
-	format_dics
-	echo '
-	################
-	# Init OK      #
-	################
-	'
-	exit
-fi
-
-if [ "$1" = "init_devfiles" ]
-then
-	init_devfiles
-	echo '
-	################
-	# Init OK      #
-	################
-	'
-	exit
-fi
-
-if [ "$1" = "init_envfiles" ]
-then
-	init_envfiles
-	echo '
-	################
-	# Init OK      #
-	################
-	'
-	exit
-fi
-
-if [ "$1" = "init_docfiles" ]
-then
-	init_docfiles
-	echo '
-	################
-	# Init OK      #
-	################
-	'
-	exit
-fi
-
 echo '
 ###################
 #                 #
 #  initializer    #
 #                 #
 ###################
+
+Do you want to do?
+
 '
+
+FDIC="format_dics"
+IDEV="init_devfiles"
+IENV="init_envfiles"
+IDOC="init_docfiles" 
+ALL="ALL"
+
+select ARG in ${FDIC} ${IDEV} ${IENV} ${IDOC} ${ALL}
+do
+	if [ -z "${ARG}" ]
+	then
+		echo "invalid vars"
+
+	elif [ ${ARG} = "format_dics" ]
+	then
+		echo "---init start ${ARG}...--------"
+		format_dics
+		echo '
+		################
+		# dic Init OK  #
+		################
+		'
+
+	elif [ ${ARG} = "init_devfiles" ]
+	then
+		echo "---init start ${ARG}...--------"
+		init_devfiles
+		echo '
+		################
+		# dev Init OK  #
+		################
+		'
+
+	elif [ ${ARG} = "init_envfiles" ]
+	then
+		echo "---init start ${ARG}...--------"
+		init_envfiles
+		echo '
+		################
+		# ENV Init OK  #
+		################
+		'
+
+	elif [ ${ARG} = "init_docfiles" ]
+	then
+		echo "---init start ${ARG}...--------"
+		init_docfiles
+		echo '
+		################
+		# Init OK      #
+		################
+		'
+
+	elif [ ${ARG} = "all" ]
+	then
+		echo '
+		################
+		# Start Init   #
+		################
+		'
+		format_dics
+		init_devfiles
+		init_docfiles
+		init_envfiles
+		echo '
+		################
+		# Init OK      #
+		################
+		'
+
+	else
+		echo "unrecognize option"
+	fi
+done
+
 
 
 # Todo: run automatically by using curl.

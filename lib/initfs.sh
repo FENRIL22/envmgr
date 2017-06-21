@@ -95,7 +95,7 @@ do
 		################
 		'
 
-	elif [ ${ARG} = "all" ]
+	elif [ ${ARG} = "ALL" ]
 	then
 		echo '
 		################

@@ -38,6 +38,7 @@ init_devfiles(){
 init_docfiles(){
 	cd ~/docs
 	git clone git@bitbucket.org:FENRIL22/univ_m_2017.git
+	git clone git@bitbucket.org:FENRIL22/univ_m_2017_ai.git
 	git clone git@bitbucket.org:FENRIL22/univ_research.git
 }
 

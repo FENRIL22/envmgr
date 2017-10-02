@@ -3,23 +3,6 @@ set -eu
 define(){ eval ${1:?}=\"\${*\:2}\"; }
 array (){ eval ${1:?}=\(\"\${@\:2}\"\); }
 
-init_ssh(){
-	mkdir ~/.ssh
-	cd ~/.ssh
-	ssh-keygen -t rsa
-	cat ~/.ssh/id_rsa.pub | pbcopy
-
-	echo "Generate Key copy to clipboard"
-}
-
-format_dics(){
-	mkdir ~/OneDrive || true
-	mkdir env || true
-	mkdir -p ~/dev/chamber || true
-	mkdir ~/docs || true
-	mkdir -p ~/fs/mnt || true
-}
-
 init_envfiles(){
 	cd ~/env
 	git clone git@github.com:FENRIL22/envmgr.git
@@ -54,29 +37,14 @@ Do you want to do?
 
 '
 
-FDIC="format_dics"
-ISSH="init_ssh"
 IDEV="init_devfiles"
 IENV="init_envfiles"
-IDOC="init_docfiles" 
-ALL="all"
 
-select ARG in ${ISSH} ${FDIC} ${IDEV} ${IENV} ${IDOC} ${ALL}
+select ARG in ${IDEV} ${IENV}
 do
 	if [ -z "${ARG}" ]
 	then
 		echo "invalid vars"
-
-	elif [ ${ARG} = "format_dics" ]
-	then
-		echo "---init start ${ARG}...--------"
-		format_dics
-		echo '
-		################
-		# dic Init OK  #
-		################
-		'
-		exit
 
 	elif [ ${ARG} = "init_devfiles" ]
 	then
@@ -99,18 +67,6 @@ do
 		################
 		'
 		exit
-
-	elif [ ${ARG} = "init_ssh" ]
-	then
-		echo "---init start ${ARG}...--------"
-		init_ssh
-		echo '
-		################
-		# SSH Init OK  #
-		################
-		'
-		exit
-
 
 	elif [ ${ARG} = "init_docfiles" ]
 	then
@@ -149,8 +105,6 @@ do
 		echo "unrecognize option"
 	fi
 done
-
-
 
 # Todo: run automatically by using curl.
 #format_dics

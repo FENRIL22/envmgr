@@ -10,6 +10,7 @@ function init_brew(){
 	'
 	echo "## Install Xcode (Depend) Testing"
 	echo "! Please Include Xcode packs select !"
+	echo "! And Xcode boot up + Additional pack Install !"
 	xcode-select --install || true
 	echo "sleeping... Please push any key"
 	read aksjfiefe
@@ -39,7 +40,7 @@ function install_brewpacks(){
 	brew tap rcmdnk/rcmdnkpac
 	array brewlist+ screenutf8
 	#google
-	array casklist+ google-drive
+	array casklist+ google-backup-and-sync
 	array casklist+ google-chrome
 	#slack
 	array casklist+ slack
@@ -53,15 +54,17 @@ function install_brewpacks(){
 	array casklist+ inkscape
 	array casklist+ blender
 	#report
-	array casklist+ skim
+	#array casklist+ skim
 	array casklist+ libreoffice
 	#sshfs
 	array casklist+ osxfuse
 	array brewlist+ sshfs
 	#istat_menus
-	array casklist+ istat-menus
+	#array casklist+ istat-menus
 	#ranger(file manager)
 	array brewlist+ ranger
+	#dropbox
+	array casklist+ dropbox
 
 	#Install
 	brew update
@@ -73,7 +76,7 @@ function install_brewpacks(){
 function install_maspacks(){
 	#appstore-files
 	# BoxySVG
-	mas install 611658502
+	#mas install 611658502
 	# OneDrive
 	mas install 823766827
 	# Xcode
@@ -89,7 +92,7 @@ function install_go(){
 
 function install_pips(){
 	sudo easy_install pip
-	sudo pip install tensorflow
+	#sudo pip install tensorflow
 	# or gpu
 	# pip install tensorflow-gpu
 	pip install virtualenv
@@ -122,6 +125,7 @@ function do_yourself(){
 	reboot for complete to aquqskk init
 	sudo tlmgr update --self --all
 	change setting : skim : autoreload(kannkou settei)
+	透明度の設定/バーを黒くする設定
 	'
 }
 
@@ -143,3 +147,18 @@ then
 	exit
 fi
 
+if [ "$1" = "restart" ]
+then
+	install_brewpacks
+
+	install_texlive
+	# !testing
+	#install_go
+	#install_pips
+	echo '
+	################
+	# Init OK      #
+	################
+	'
+	exit
+fi
